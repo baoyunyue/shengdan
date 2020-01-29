@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <title>圣诞主题</title>
+        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="pageA.css">
+    </head>
+    <body>
+        <section class="container">
+            <section class="page-a bg-adaptive">
+                <figure class="moon"></figure>
+                <figure class="tree"></figure>
+                <figure class="cloudy"></figure>
+            </section>
+            <section class="page-b bg-adaptive"></section>
+            <section class="page-c bg-adaptive"></section>
+        </section>
+        <script type="text/javascript">
+        (function(doc,win){
+            var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function(){
+                var clientWidth = docEl.clientWidth;
+                if(!clientWidth)return;
+                docEl.style.fontSize = 20 * (clientWidth/320)+'px';
+                document.body.style.height = clientWidth * (900/1440) +'px'
+            };
+            win.addEventListener(resizeEvt,recalc,false);
+            doc.addEventListener('DOMContentLoaded',recalc,false);
+        })(document,window);
+        </script>
+    </body>
+</html>
